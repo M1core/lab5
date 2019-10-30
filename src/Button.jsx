@@ -14,12 +14,13 @@ export default class Button extends React.Component {
   handleClick() {
     this.setState({ loading: true });
     let users = this.props.onClick();
-
+    console.log(this.props)
     users.then(response => {
       this.setState(() => {
         return { users: response, loading: false };
       });
     });
+    console.log(this.state.users)
   }
 
   render() {
